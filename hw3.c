@@ -13,6 +13,9 @@ int main(){
 	do{
 		printf("CS361 > ");
 		scanf("%s",command);
+		if(strcmp(command, "exit")==0){
+			return 0;
+		}
 		if(strcmp(command,"ls")==0){
 			int pid = fork();
 
