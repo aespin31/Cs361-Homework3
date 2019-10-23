@@ -7,10 +7,9 @@
 #define MAX 20
 int main(){
 	char *argsarray[] = {"/bin/ls", (char *)0};	
-	char *argsecho[] = {"echo","temporary", (char *)0};
 	char command[MAX];
 	char words[MAX];
-	int end = 1;
+	
 	int pid_number;
 	int exitstatus;
 	do{
