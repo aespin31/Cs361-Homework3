@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-#define MAX 20
+#define MAX 60
 int main(){
 	char *argsarray[] = {"/bin/ls", (char *)0};	
 	char command[MAX];
