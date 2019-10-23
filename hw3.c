@@ -6,7 +6,7 @@
 #include <sys/wait.h>
 int main(){
 	char *argsarray[] = {"/bin/ls", (char *)0};	
-
+	char *argsecho[] = {"echo","temporary", (char *)0};
 	char command[10];
 	int end = 1;
 	int pid_number;
@@ -30,7 +30,19 @@ int main(){
 				exitstatus=WEXITSTATUS(status);
 			}
 			
-	}
+		}
+		if(strcmp(command, "echo")==0){
+			int pid = fork();
+			if(pid==0){
+				pid_number = getpid();
+				execv("/bin/echo", argsecho);
+			}
+			else{
+				int status;
+				wait(&status);
+				exitstatus=WEXITSTATUS(status);
+			}
+		}
 		printf("pid:%d status:%d\n", pid_number, exitstatus);
 		end =0;
 	
