@@ -29,6 +29,7 @@ int main(){
 				
 				str[i] = command[i];
 			}
+			str[4]=0;
 		}
 		int j=0;
 		if(command[1]=='c'){
@@ -42,15 +43,13 @@ int main(){
 				words[j] = command[i];
 				i++;
 				j++;
-			} 
-			words[j]=0;
+			}
+			j--;
+		       	words[j--]=0;	
+
 		}
-	
-	
-		if(strcmp(words,"purple")==0){
-			printf("WIN\n");
-		}
-		if(strcmp(str, "exit")==0){
+
+		if(strcmp(str, "exit")==0){;
 			return 0;
 		}
 		if(strcmp(str,"ls")==0){
